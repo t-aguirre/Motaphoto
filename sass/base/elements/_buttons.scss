@@ -1,0 +1,57 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: $color__border-button;
+	border-radius: 3px;
+	background: $color__background-button;
+	color: rgba(0, 0, 0, 0.8);
+	line-height: 1;
+	padding: 0.6em 1em 0.4em;
+
+	&:hover {
+		border-color: $color__border-button-hover;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+	}
+}
+
+//MENU BURGER
+// #site-navigation .menu-toggle {
+// 	width: 27px;
+// 	height: 19px;
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	background-color: $color__white;
+// 	border: none;
+// 	color: $color__black;
+// 	cursor: pointer;
+// 	padding: 0;
+
+// 		.line {
+// 			display: block;
+// 			width: 27px;
+// 			height: 2px;
+// 			background-color: $color__black;
+// 			transition: all 0.3s ease;
+// 		}
+
+// 	&.toggled {
+// 		.line:nth-child(1) {
+// 			transform: rotate(45deg) translateX(0) translateY(12px);
+// 		}
+// 		.line:nth-child(2) {
+// 			opacity: 0;
+// 		}
+// 		.line:nth-child(3) {
+// 			transform: rotate(-45deg) translateY(-12px);
+// 		}
+// 	}
+// }
+

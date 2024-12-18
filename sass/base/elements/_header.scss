@@ -1,0 +1,36 @@
+.site-header {
+    width: 100%;
+    height:  80px;
+    background-color: $color__white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 146px 0 146px;
+}
+
+.header-banner {
+    height: 962px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: left top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $color__black;
+}
+
+h2.header-title {
+    font-family: $font-family-italic-bold;
+    font-size: $font-size__header-banner;
+    font-weight: $font-weight-bold;
+    color: transparent;
+    -webkit-text-stroke: 3px $color__white;
+    text-align: center;
+}
+
+@media screen and (max-width: 940px) {
+    .header-banner {
+        height: 253px;
+    }
+}
