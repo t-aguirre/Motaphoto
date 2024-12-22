@@ -11,7 +11,8 @@ $font__line-height-pre: 1.6;
 $font-family-regular: "space_monoregular", "Courier New", Courier, monospace;
 $font-family-italic: "space_monoitalic", "Courier New", Courier, monospace;
 $font-family-italic-bold: "space_monobold_italic", "Courier New", Courier, monospace;
-$font-family__logo: "space_monobold", "Courier New", Courier, monospace;
+$font-family-bold: "space_monobold", "Courier New", Courier, monospace;
+$font-family__logo: $font-family-bold;
 $font-family__text: "poppins-light", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 $font-family__contact-form: "poppins-medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
