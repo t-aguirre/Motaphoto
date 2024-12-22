@@ -1073,6 +1073,9 @@ h1, h2, h3, p, a {
 /* Modal
 --------------------------------------------- */
 .modal {
+  display: none;
+}
+.modal.modal-is-visible {
   position: fixed;
   top: 0;
   left: 0;

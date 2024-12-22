@@ -151,6 +151,10 @@ function motaphoto_scripts()
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
+
+	wp_enqueue_script('jquery');
+
+	wp_enqueue_script('motaphoto-modal', get_template_directory_uri() . '/js/modal.js', array('jquery'), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'motaphoto_scripts');
 
