@@ -12,7 +12,9 @@
 
 // Main site container
 .site {
-	width: $size__site-main;
+	width: 100%;
+	max-width: $size__site-main;
+	height: auto;
 }
 
 // Eviter le dépassement d'un texte de son conteneur avec les polices de fallback

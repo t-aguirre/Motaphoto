@@ -10,11 +10,61 @@
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
 
-// TYPOGRAPHIE DES MENUS DE NAVIGATIONS
+// TYPOGRAPHY OF NAVIGATION MENUS
 @mixin menu-link-styles {
-	font-family: $font-regular;
+	font-family: $font-family-regular;//Space mono
 	text-transform: uppercase;
-	font-size: $font-size__nav;
-	font-weight: $font-weight-regular;
+	font-size: $font-size__nav;//16px
   }
-  
+
+// TYPPOGRAPHIE OF CONTACT FORM
+@mixin contact-form-label {
+	font-family: $font-family__contact-form;//Poppins medium
+	text-transform: uppercase;
+	font-size: $font-size__small;//12px
+}
+
+// TYPOGRAPHIE OH HEADINGS
+//H1
+@mixin title-level-1 {
+	font-family: $font-family-italic-bold;//Space mono bold
+	text-transform: capitalize;
+	font-size: $font-size__header-banner;//96px
+}
+
+//H2
+@mixin title-level-2 {
+	font-family: $font-family-italic;//Space mono italic
+	text-transform: capitalize;
+	font-size: $font-size__title-level-2;//66px
+}
+
+//H3
+@mixin title-level-3 {
+	font-family: $font-family-regular;//Space mono
+	text-transform: capitalize;
+	font-size: $font-size__title-level-3;//18px
+} 
+
+//DESCRIPTION
+@mixin description {
+	font-family: $font-family-regular;//Space mono
+	text-transform: capitalize;
+	font-size: $font-size__text;//14px
+}
+
+//PARAGRAPH
+@mixin paragraph {
+	font-family: $font-family__text;//Poppins light
+	text-transform: capitalize;
+	font-size: $font-size__text;//14px
+}
+
+//BOUTON
+@mixin button {
+	font-family: $font-family-regular;//Space mono
+	text-transform: capitalize;
+	font-size: $font-size__small;//12px
+	cursor: pointer;
+}
+

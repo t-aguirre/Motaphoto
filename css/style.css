@@ -385,31 +385,37 @@ html {
 @font-face {
   font-family: "space_monobold";
   src: url("../fonts/spacemono-bold-webfont.woff2") format("woff2"), url("../fonts/spacemono-bold-webfont.woff") format("woff");
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "space_monobold_italic";
   src: url("../fonts/spacemono-bolditalic-webfont.woff2") format("woff2"), url("../fonts/spacemono-bolditalic-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 700;
+  font-style: italic;
 }
 @font-face {
   font-family: "space_monoitalic";
   src: url("../fonts/spacemono-italic-webfont.woff2") format("woff2"), url("../fonts/spacemono-italic-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 400;
+  font-style: italic;
 }
 @font-face {
   font-family: "space_monoregular";
   src: url("../fonts/spacemono-regular-webfont.woff2") format("woff2"), url("../fonts/spacemono-regular-webfont.woff") format("woff");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "poppinsregular";
-  src: url("../fonts/poppins-regular-webfont.woff2") format("woff2"), url("../fonts/poppins-regular-webfont.woff") format("woff");
-  font-weight: normal;
+  font-family: "poppins-light";
+  src: url("../fonts/Poppins-Light.woff2") format("woff2"), url("../fonts/Poppins-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "poppins-medium";
+  src: url("../fonts/Poppins-Medium.woff2") format("woff2"), url("../fonts/Poppins-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 p.site-title {
@@ -569,10 +575,10 @@ table {
   background-color: #000;
 }
 
-h2.header-title {
+h1.header-title {
   font-family: "space_monobold_italic", "Courier New", Courier, monospace;
+  text-transform: capitalize;
   font-size: 96px;
-  font-weight: 700;
   color: transparent;
   -webkit-text-stroke: 3px #fff;
   text-align: center;
@@ -611,7 +617,6 @@ footer#colophon .site-info ul a {
   font-family: "space_monoregular", "Courier New", Courier, monospace;
   text-transform: uppercase;
   font-size: 16px;
-  font-weight: 400;
   color: #000;
 }
 
@@ -619,7 +624,6 @@ footer#colophon .site-info ul a {
   font-family: "space_monoregular", "Courier New", Courier, monospace;
   text-transform: uppercase;
   font-size: 16px;
-  font-weight: 400;
   margin: 0;
 }
 
@@ -669,7 +673,6 @@ ul#primary-menu a {
   font-family: "space_monoregular", "Courier New", Courier, monospace;
   text-transform: uppercase;
   font-size: 16px;
-  font-weight: 400;
 }
 
 /* Forms
@@ -679,12 +682,18 @@ input[type=button],
 input[type=reset],
 input[type=submit] {
   border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
   background: #D8D8D8;
-  color: rgba(0, 0, 0, 0.8);
+  color: #000;
   line-height: 1;
-  padding: 0.6em 1em 0.4em;
+  padding: 8px 15px 8px 15px;
+  font-family: "space_monoregular", "Courier New", Courier, monospace;
+  text-transform: capitalize;
+  font-size: 12px;
+  cursor: pointer;
+  height: 50px;
 }
 button:hover,
 input[type=button]:hover,
@@ -700,6 +709,10 @@ input[type=reset]:focus,
 input[type=submit]:active,
 input[type=submit]:focus {
   border-color: #aaa #bbb #bbb;
+}
+
+button {
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.02);
 }
 
 input[type=text],
@@ -719,7 +732,7 @@ input[type=datetime-local],
 input[type=color],
 textarea {
   color: #666;
-  border: 1px solid #ccc;
+  border: 1px solid #B8BBC2;
   border-radius: 3px;
   padding: 3px;
 }
@@ -743,7 +756,7 @@ textarea:focus {
 }
 
 select {
-  border: 1px solid #ccc;
+  border: 1px solid #B8BBC2;
 }
 
 textarea {
@@ -754,7 +767,9 @@ textarea {
 # Layouts
 --------------------------------------------------------------*/
 .site {
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
 }
 
 h1, h2, h3, p, a {
@@ -1055,6 +1070,149 @@ h1, h2, h3, p, a {
   display: block;
 }
 
+/* Modal
+--------------------------------------------- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px 0 15px 0;
+  z-index: 20;
+}
+.modal .modal-content {
+  width: 100%;
+  max-width: 597px;
+  max-height: 90vh;
+  height: auto;
+  border: 5px solid #000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #fff;
+  margin: auto;
+}
+
+.modal-close {
+  float: right;
+  margin-right: 23px;
+  color: #E00000;
+  font-family: "space_monobold", "Courier New", Courier, monospace;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modal-close:hover {
+  transform: scale(2);
+  transition: transform 0.2s ease;
+}
+
+.contact-text {
+  position: relative;
+  height: 107px;
+  font-family: "space_monoitalic", "Courier New", Courier, monospace;
+  font-size: 46px;
+  text-transform: uppercase;
+  line-height: 0.8;
+  text-align: center;
+  margin-top: 18px;
+}
+.contact-text::before {
+  content: "tactContactConta";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  white-space: nowrap;
+  transform: scale(1.5);
+  letter-spacing: -1px;
+}
+.contact-text::after {
+  content: "ntactContactCont";
+  position: absolute;
+  top: 68px;
+  left: 0px;
+  right: -7px;
+  bottom: 0;
+  white-space: nowrap;
+  transform: scale(1.5);
+  letter-spacing: -1px;
+}
+
+.wpcf7 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 46px;
+}
+.wpcf7-form {
+  width: 263px;
+}
+
+.wpcf7 p label {
+  font-family: "poppins-medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.wpcf7 p label input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 3px 0 3px;
+  border: 1px solid #B8BBC2;
+  border-radius: 8px;
+}
+.wpcf7 p label textarea {
+  display: block;
+  width: 100%;
+  height: 210px;
+  border: 1px solid #B8BBC2;
+  border-radius: 8px;
+}
+
+.wpcf7-submit {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .modal .modal-content {
+    max-width: 286px;
+    max-height: 100vh;
+  }
+  .contact-text {
+    font-size: 30px;
+    height: 55px;
+  }
+  .contact-text::before, .contact-text::after {
+    transform: scale(1.2);
+  }
+  .contact-text::before {
+    top: 2px;
+  }
+  .contact-text::after {
+    top: 32px;
+  }
+  .wpcf7 {
+    max-width: 190px;
+    margin-top: 30px;
+    margin: auto;
+  }
+  .wpcf7-form {
+    width: 100%;
+  }
+  .wpcf7 p label textarea {
+    height: 140px;
+    margin-bottom: 16px;
+  }
+  .wpcf7 p:last-of-type {
+    margin: 19px 0 0 0;
+  }
+}
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/

@@ -22,8 +22,11 @@
 		));
 		?>
 		<p class="footer-text">Tous dorits réservés</p>
-
 	</div><!-- .site-info -->
+	<!-- Contact pop-up -->
+	<?php
+	echo get_template_part('template-parts/popup', get_post_type());
+	?>
 </footer><!-- #colophon -->
 </div><!-- #page -->
 

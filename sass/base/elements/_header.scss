@@ -20,10 +20,8 @@
     background-color: $color__black;
 }
 
-h2.header-title {
-    font-family: $font-family-italic-bold;
-    font-size: $font-size__header-banner;
-    font-weight: $font-weight-bold;
+h1.header-title {
+    @include title-level-1;
     color: transparent;
     -webkit-text-stroke: 3px $color__white;
     text-align: center;
