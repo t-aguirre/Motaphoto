@@ -10,6 +10,16 @@ jQuery(document).ready(function($) {
             $('#contact-modal').show();
         }
     });
+    //Opening the modal if the user clicks on the contact button
+    $('.contact-btn').click(function() {
+        $('#contact-modal').addClass('modal-is-visible');
+        $('#contact-modal').show(); 
+    });
+
+    // Filling the modal field with the reference value
+    if (typeof photoData !== 'undefined' && photoData.reference) {
+        $('#reference-input').val(photoData.reference);
+    }
 
     // Close the modal
     $('#close-modal').click(function() {

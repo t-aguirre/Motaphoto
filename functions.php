@@ -194,3 +194,8 @@ if (defined('JETPACK__VERSION')) {
  * Shortcode to display a dynamic date
  */
 require get_template_directory() . '/inc/dynamic-date.php';
+
+/**
+ * Retrieving the "reference" meta field from SCF
+ */
+require get_template_directory() . '/inc/contact-modal.php';
