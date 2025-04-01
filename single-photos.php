@@ -19,8 +19,8 @@ while (have_posts()) : the_post();
         'date' => get_the_time("Y"),
         'reference' => get_field("reference"),
         'type' => get_field("type"),
-        'categories' => get_the_term_list(get_the_ID(), 'categorie'),
-        'formats' => get_the_term_list(get_the_ID(), 'format'),
+        'categories' => strip_tags(get_the_term_list(get_the_ID(), 'categorie')),
+        'formats' => strip_tags(get_the_term_list(get_the_ID(), 'format')),
     ];
 endwhile; // End of the loop.
 // var_dump($posts_data);
