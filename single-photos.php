@@ -86,8 +86,41 @@ endif;
             </div>
         </div>
     </section>
+    <section class="recommendation-section">
+        <h2 class="recommendation-title">Vous aimerez aussi</h2>
 
+        <?php
+        $post_terms = wp_get_object_terms($post->ID, 'categorie', array('fields' => 'ids'));
+        $args = array(
+            'post_type' => 'photos',
+            'post__not_in' => array($post->ID),
+            'posts_per_page' => 2,
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'categorie',
+                    'field' => 'id',
+                    'terms' => $post_terms,
+                )
+            )
+        );
+        $the_query = new WP_Query($args);
 
+        if ($the_query->have_posts()) {
+            echo '<div class="recommendation-section__photos">';
+            while ($the_query->have_posts()) {
+                $the_query->the_post();
+        ?>
+                <!-- Loading a photo to be repeated as many times as the query provides a result -->
+                <?php get_template_part('template-parts/onephoto'); ?>
+        <?php
+            }
+            echo '</div>';
+        } else {
+            echo ("Désolée. Nous n'avons pas d'autres photos dans cette catégorie.");
+        }
+        wp_reset_postdata();
+        ?>
+    </section>
 </main><!-- #main -->
 
 <?php

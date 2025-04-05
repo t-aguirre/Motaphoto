@@ -938,6 +938,90 @@ div.flex-row {
   text-decoration: none;
 }
 
+.recommendation-section {
+  margin: auto;
+  width: 1148px;
+}
+
+.recommendation-title {
+  font-family: "space_monoregular", "Courier New", Courier, monospace;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  margin: 77px 0 52px;
+}
+
+.recommendation-section__photos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 109px;
+}
+
+.recommendation-section__single-photo {
+  width: 564px;
+  height: 495px;
+  position: relative;
+}
+
+.recommendation-section__single-photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 11px 18px;
+}
+
+.recommendation-section__single-photo:hover .recommendation-section__single-photo-overlay {
+  opacity: 1;
+}
+
+.recommendation-section__single-photo img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+}
+
+.recommendation-section__single-photo-overlay a.fullscreen-icon {
+  display: block;
+  width: 34px;
+  height: 34px;
+  align-self: flex-end;
+}
+
+.fullscreen-icon img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.recommendation-section__single-photo-overlay a.visibility-icon {
+  width: 46px;
+  height: 31.2px;
+}
+
+.photo-data-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: "space_monoregular", "Courier New", Courier, monospace;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
