@@ -111,7 +111,7 @@ endif;
                 $the_query->the_post();
         ?>
                 <!-- Loading a photo to be repeated as many times as the query provides a result -->
-                <?php get_template_part('template-parts/onephoto', null, array('data' => $data)); ?>
+                <?php get_template_part('template-parts/onephoto') ?>
         <?php
             }
             echo '</div>';
