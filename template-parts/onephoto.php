@@ -10,6 +10,7 @@
             <img src="<?php echo get_template_directory_uri(); ?>/icons/visibility-icon.png" alt="Icone d'un oeil qui mène vers la page d'information de la photo">
         </a>
         <div class="photo-data-container">
+            <?php $data = $args['data'] ?>
             <p><?php echo $data['reference']; ?></p>
             <p><?php echo $data['categories']; ?></p>
         </div>
