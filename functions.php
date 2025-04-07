@@ -155,6 +155,8 @@ function motaphoto_scripts()
 	wp_enqueue_script('jquery');
 
 	wp_enqueue_script('motaphoto-modal', get_template_directory_uri() . '/js/modal.js', array('jquery'), _S_VERSION, true);
+
+	wp_enqueue_script('motaphoto-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'motaphoto_scripts');
 

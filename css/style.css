@@ -903,12 +903,17 @@ div.flex-row {
 .photo-navigation > div:first-child {
   display: flex;
   flex-direction: column;
+  width: 81px;
+  height: 90px;
   justify-content: space-between;
+  justify-content: flex-end;
+  padding-top: 8px;
 }
 
 .photo-thumbnail {
   width: 81px;
   height: 71px;
+  padding-top: 5px;
 }
 
 .photo-thumbnail > a {

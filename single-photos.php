@@ -27,10 +27,15 @@ endwhile; // End of the loop.
 
 //Previous - Next loop
 $prev_post = get_previous_post();
+$next_post = get_next_post();
+
 if ($prev_post) :
     $prev_thumb = get_the_post_thumbnail($prev_post->ID, 'thumbnail');
 endif;
 
+if ($next_post) :
+    $next_thumb = get_the_post_thumbnail($next_post->ID, 'thumbnail');
+endif;
 ?>
 
 <main id="primary" class="site-main">
@@ -71,15 +76,31 @@ endif;
             </div>
             <div class="photo-navigation">
                 <div>
-                    <div class="photo-thumbnail">
+                    <?php if ($prev_post) { ?>
+                        <div class="photo-thumbnail previous">
+                            <a href="<?php echo get_permalink($prev_post->ID); ?>" class="prev-thumb">
+                                <?php echo $prev_thumb; ?>
+                            </a>
+                        </div>
+                    <?php }
 
-                        <a href="<?php echo get_permalink($prev_post->ID); ?>">
-                            <?php echo $prev_thumb; ?>
-                        </a>
-                    </div>
+                    ?>
+                    <?php if ($next_post) { ?>
+                        <div class="photo-thumbnail next">
+                            <a href="<?php echo get_permalink($next_post->ID); ?>" class="next-thumb">
+                                <?php echo $next_thumb; ?>
+                            </a>
+                        </div>
+                    <?php }  ?>
+
                     <div class="prev-next">
-                        <div class="nav-prev"><?php previous_post_link('%link', '&larr;'); ?></div>
-                        <div class="nav-next"><?php next_post_link('%link', '&rarr;'); ?></div>
+                        <?php if ($prev_post) { ?>
+                            <div class="nav-prev"><?php previous_post_link('%link', '&larr;'); ?></div>
+                        <?php }  ?>
+                        <?php if ($next_post) { ?>
+                            <div class="nav-next"><?php next_post_link('%link', '&rarr;'); ?></div>
+                        <?php }  ?>
+
                     </div>
                 </div>
 
