@@ -33,6 +33,15 @@ main {
 }
 
 /**
+ * Override browser default bold style for headings
+ */
+ h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+  }
+  
+
+
+/**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
@@ -346,4 +355,12 @@ template {
 
 [hidden] {
 	display: none;
+}
+
+// MEDIA QUERIES
+// Smartphones
+@media (max-width: 768px) {
+	main {
+		margin: 0;
+	}
 }

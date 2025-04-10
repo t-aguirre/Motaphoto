@@ -83,6 +83,13 @@ main {
 }
 
 /**
+ * Override browser default bold style for headings
+ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+/**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
@@ -363,6 +370,11 @@ template {
   display: none;
 }
 
+@media (max-width: 768px) {
+  main {
+    margin: 0;
+  }
+}
 /* Box sizing
 --------------------------------------------- */
 /* Inherit box-sizing to more easily change it's value on a component level.
@@ -584,7 +596,6 @@ table {
 
 h1.header-title {
   font-family: "space_monobold_italic", "Courier New", Courier, monospace;
-  text-transform: capitalize;
   font-size: 96px;
   color: transparent;
   -webkit-text-stroke: 3px #fff;
@@ -706,7 +717,6 @@ input[type=submit] {
   line-height: 1;
   padding: 8px 15px 8px 15px;
   font-family: "space_monoregular", "Courier New", Courier, monospace;
-  text-transform: capitalize;
   font-size: 12px;
   cursor: pointer;
   height: 50px;
@@ -799,17 +809,17 @@ h1, h2, h3, p, a {
   max-width: 100%;
 }
 
-.main-section {
-  padding-top: 38px;
+.main-section, .recommendation-section {
+  padding: 38px 146px 0 146px;
   margin: auto;
-  width: 1148px;
+  width: 100%;
+  max-width: 1440px;
 }
 
 article.flex-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
   align-items: flex-end;
 }
@@ -845,41 +855,43 @@ article.flex-row {
 
 .photo-img {
   width: 49%;
+  display: flex;
 }
 
 .photo-img > img {
   object-fit: contain;
-  object-position: center;
 }
 
 div.flex-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
   gap: 1.2%;
   border-bottom: solid 1px #000000;
 }
 
-.cta-call {
+.cta-call, .no-photos-message {
   font-family: "poppins-light", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  text-transform: capitalize;
   font-size: 14px;
+}
+
+.no-photos-message {
+  margin-bottom: 109px;
 }
 
 .contact-cta {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
   width: 49%;
+  align-items: center;
 }
 
 .contact-btn {
   font-family: "space_monoregular", "Courier New", Courier, monospace;
-  text-transform: capitalize;
   font-size: 12px;
   cursor: pointer;
   width: 272px;
@@ -933,19 +945,14 @@ div.flex-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
   width: 100%;
   font-size: 30px;
+  align-items: center;
 }
 
 .nav-next a, .nav-prev a {
   text-decoration: none;
-}
-
-.recommendation-section {
-  margin: auto;
-  width: 1148px;
 }
 
 .recommendation-title {
@@ -960,14 +967,17 @@ div.flex-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
   margin-bottom: 109px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .recommendation-section__single-photo {
-  width: 564px;
-  height: 495px;
+  aspect-ratio: 1.14;
+  width: 49%;
+  max-width: 564px;
   position: relative;
 }
 
@@ -1027,6 +1037,103 @@ div.flex-row {
   color: #fff;
 }
 
+@media (max-width: 1302px) {
+  .recommendation-section__single-photo {
+    width: 48%;
+  }
+  .contact-cta {
+    margin-bottom: 21px;
+  }
+  .contact-btn {
+    width: 100%;
+  }
+}
+@media (max-width: 850px) {
+  .main-section {
+    padding: 20px 0 0 0;
+  }
+  article.flex-row {
+    justify-content: center;
+  }
+  .photos-data-wrapper {
+    order: 2;
+    width: 80%;
+    border-bottom: none;
+  }
+  .photo-title {
+    width: 85%;
+    margin: 20px 0 14px 0;
+  }
+  .data-list {
+    padding-bottom: 22px;
+  }
+  .photo-img {
+    order: 1;
+    width: 80%;
+  }
+  .photo-navigation {
+    display: none;
+  }
+  div.flex-row {
+    justify-content: center;
+    border-top: 1px solid #000000;
+  }
+  .contact-cta {
+    width: 80%;
+    justify-content: center;
+  }
+  .cta-call, .contact-btn {
+    width: 100%;
+  }
+  .cta-call {
+    margin: 45px 0 15px 0;
+  }
+  .contact-btn {
+    padding-top: 3px;
+    margin-bottom: 24px;
+  }
+  .recommendation-section {
+    width: 80%;
+    padding: 0;
+  }
+  .recommendation-section__photos {
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .recommendation-section__single-photo {
+    width: 47%;
+  }
+  .no-photos-message {
+    margin-bottom: 24px;
+    line-height: 1.8em;
+  }
+}
+@media (max-width: 481px) {
+  .photos-data-wrapper {
+    max-width: 265px;
+  }
+  .photo-title {
+    font-size: 46px;
+  }
+  .contact-cta {
+    max-width: 265px;
+  }
+  .recommendation-title {
+    text-align: center;
+    margin: 25px 0 20px 0;
+  }
+  .recommendation-section__photos {
+    justify-content: center;
+  }
+  .recommendation-section__single-photo {
+    width: 100%;
+    max-width: 317.66px;
+  }
+  .photo-img {
+    width: 100%;
+    max-width: 265px;
+  }
+}
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/

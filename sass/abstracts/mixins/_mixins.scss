@@ -8,7 +8,8 @@
 //Sections
 @mixin sections {
 	margin: auto;
-    width: 1148px;
+	width: 100%;
+    max-width: 1440px;
 }
 
 // Column width with margin
@@ -38,7 +39,6 @@
 //H1
 @mixin title-level-1 {
 	font-family: $font-family-italic-bold;//Space mono bold
-	text-transform: capitalize;
 	font-size: $font-size__header-banner;//96px
 }
 
@@ -49,11 +49,12 @@
 	font-size: $font-size__title-level-2;//66px
 }
 
-//H3
+//H3 - H2 Single-photos.php
 @mixin title-level-3 {
 	font-family: $font-family-regular;//Space mono
 	text-transform: uppercase;
 	font-size: $font-size__title-level-3;//18px
+	letter-spacing: 0.1em;
 } 
 
 //DESCRIPTION
@@ -67,14 +68,12 @@
 //PARAGRAPH
 @mixin paragraph {
 	font-family: $font-family__text;//Poppins light
-	text-transform: capitalize;
 	font-size: $font-size__text;//14px
 }
 
 //BOUTON
 @mixin button {
 	font-family: $font-family-regular;//Space mono
-	text-transform: capitalize;
 	font-size: $font-size__small;//12px
 	cursor: pointer;
 
@@ -90,7 +89,6 @@
 	display: flex;
     flex-direction: row;
     justify-content: space-between;
-	align-items: center;
     flex-wrap: wrap;
 }
 
@@ -111,7 +109,6 @@
 //Images
 @mixin contain-picture {
 	object-fit: contain;
-    object-position: center;
 }
 @mixin cover-picture {
 	object-fit: cover;

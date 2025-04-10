@@ -137,7 +137,7 @@ endif;
             }
             echo '</div>';
         } else {
-            echo ("Désolée, nous n'avons pas d'autres photos dans cette catégorie.");
+            echo ("<p class='no-photos-message'>Désolée, nous n'avons pas d'autres photos dans cette catégorie.</p>");
         }
         wp_reset_postdata();
         ?>
