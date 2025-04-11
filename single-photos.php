@@ -14,7 +14,7 @@ $posts_data = [];
 
 while (have_posts()) : the_post();
     $posts_data[] = [
-        'image' => get_the_post_thumbnail(get_the_ID(), 'medium_large'),
+        'image' => get_the_post_thumbnail(get_the_ID(), 'full'),
         'title' => get_the_title(),
         'date' => get_the_time("Y"),
         'reference' => get_field("reference"),

@@ -568,11 +568,12 @@ table {
 .header-nav {
   width: 100%;
   box-shadow: 0 4px 14px 10px rgba(0, 0, 0, 0.1);
+  height: 80px;
 }
 
 .site-header {
   width: 100%;
-  height: 80px;
+  height: 100%;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -602,7 +603,18 @@ h1.header-title {
   text-align: center;
 }
 
-@media screen and (max-width: 940px) {
+@media (max-width: 940px) {
+  .header-nav {
+    height: 72px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .site-header {
+    justify-content: center;
+    padding: 0;
+    width: 80%;
+  }
   .header-banner {
     height: 253px;
   }
@@ -977,6 +989,8 @@ div.flex-row {
 .recommendation-section__single-photo {
   aspect-ratio: 1.14;
   width: 49%;
+  height: auto;
+  max-height: 495px;
   max-width: 564px;
   position: relative;
 }
@@ -1003,7 +1017,6 @@ div.flex-row {
 
 .recommendation-section__single-photo img {
   object-fit: cover;
-  object-position: center;
   height: 100%;
 }
 
@@ -1038,22 +1051,12 @@ div.flex-row {
 }
 
 @media (max-width: 1302px) {
-  .recommendation-section__single-photo {
-    width: 48%;
-  }
-  .contact-cta {
-    margin-bottom: 21px;
-  }
-  .contact-btn {
-    width: 100%;
-  }
-}
-@media (max-width: 850px) {
   .main-section {
-    padding: 20px 0 0 0;
+    padding: 38px 0 0 0;
   }
   article.flex-row {
     justify-content: center;
+    margin-top: 40px;
   }
   .photos-data-wrapper {
     order: 2;
@@ -1063,6 +1066,7 @@ div.flex-row {
   .photo-title {
     width: 85%;
     margin: 20px 0 14px 0;
+    font-size: 46px;
   }
   .data-list {
     padding-bottom: 22px;
@@ -1070,6 +1074,7 @@ div.flex-row {
   .photo-img {
     order: 1;
     width: 80%;
+    justify-content: center;
   }
   .photo-navigation {
     display: none;
@@ -1092,16 +1097,31 @@ div.flex-row {
     padding-top: 3px;
     margin-bottom: 24px;
   }
+  .recommendation-section__single-photo {
+    width: 48%;
+  }
+  .contact-cta {
+    margin-bottom: 21px;
+  }
+  .contact-btn {
+    width: 100%;
+  }
+}
+@media (max-width: 940px) {
   .recommendation-section {
     width: 80%;
     padding: 0;
   }
   .recommendation-section__photos {
     justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: 58px;
   }
   .recommendation-section__single-photo {
     width: 47%;
+    height: auto;
+  }
+  .recommendation-title {
+    margin-top: 53px;
   }
   .no-photos-message {
     margin-bottom: 24px;
@@ -1109,14 +1129,14 @@ div.flex-row {
   }
 }
 @media (max-width: 481px) {
-  .photos-data-wrapper {
-    max-width: 265px;
+  .photo-img {
+    width: 80%;
   }
-  .photo-title {
-    font-size: 46px;
+  .photos-data-wrapper {
+    width: 80%;
   }
   .contact-cta {
-    max-width: 265px;
+    max-width: 80%;
   }
   .recommendation-title {
     text-align: center;
@@ -1124,14 +1144,27 @@ div.flex-row {
   }
   .recommendation-section__photos {
     justify-content: center;
+    margin-bottom: 24px;
   }
   .recommendation-section__single-photo {
     width: 100%;
+    height: auto;
     max-width: 317.66px;
   }
+}
+@media (max-width: 375px) {
   .photo-img {
     width: 100%;
     max-width: 265px;
+  }
+  .photos-data-wrapper {
+    max-width: 265px;
+  }
+  .contact-cta {
+    max-width: 265px;
+  }
+  .recommendation-section__single-photo {
+    max-width: 317.66px;
   }
 }
 /*--------------------------------------------------------------
@@ -1198,12 +1231,6 @@ div.flex-row {
   }
 }
 @media screen and (max-width: 940px) {
-  .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 0 40px 0 40px;
-  }
   nav #site-navigation {
     position: relative;
   }
@@ -1250,9 +1277,6 @@ div.flex-row {
   #site-navigation .menu-toggle.toggled .line:nth-child(3) {
     top: 50%;
     transform: rotate(-45deg) translateY(-50%);
-  }
-  .site-header {
-    height: 71.91px;
   }
   ul#primary-menu {
     display: none;

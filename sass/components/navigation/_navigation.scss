@@ -89,14 +89,6 @@
 }
 
 @media screen and (max-width: 940px) {
-
-	.site-header {
-		position: fixed;
-		top: 0;
-		left: 0;
-		padding: 0 40px 0 40px;
-	}
-
 	nav #site-navigation {
 		position: relative;
 	}
@@ -151,10 +143,6 @@
 				transform: rotate(-45deg) translateY(-50%);
 			}
 		}
-	}
-
-	.site-header {
-		height: 71.91px;
 	}
 
 	ul#primary-menu {
