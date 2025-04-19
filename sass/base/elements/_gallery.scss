@@ -1,0 +1,20 @@
+.photos-catalogue {
+    display: flex;
+    justify-content: center;
+}
+
+.catalogue-margin {
+    margin-bottom: 53px;
+}
+
+//MEDIA QUERIES
+//Mobiles
+@media (max-width: 481px) {
+    .catalogue-margin {
+        margin-bottom: 77px;
+    }
+    
+    .photos-loaded {
+        margin-bottom: 45px;
+    }
+}

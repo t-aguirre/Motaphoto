@@ -127,7 +127,7 @@ endif;
         $the_query = new WP_Query($args);
 
         if ($the_query->have_posts()) {
-            echo '<div class="recommendation-section__photos">';
+            echo '<div class="recommendation-section__photos recommendation-section--margin">';
             while ($the_query->have_posts()) {
                 $the_query->the_post();
         ?>

@@ -84,6 +84,22 @@
 	}
 }
 
+//Filter INPUT
+@mixin filter-input {
+	width: 260px;
+    height: auto;
+	display: flex;
+    justify-content: space-between;
+    border: 1.3px solid $color__input-border;
+    border-radius: 8px;
+    padding: 11px 18px 11px 18px;
+	font-family: $font-family__contact-form;//Poppins medium
+	font-size: $font-size__small;//12px
+	color: $color__link-visited;
+	text-transform: uppercase;
+}
+
+
 //FLEX CONTAINERS
 @mixin flex-row {
 	display: flex;

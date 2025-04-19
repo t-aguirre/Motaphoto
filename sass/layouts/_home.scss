@@ -1,0 +1,18 @@
+//MAIN SECTION
+.main-section-margin{
+    margin-bottom:  40px;
+}
+//LOAD button
+.load-btn {
+    @include button;
+    width: 272px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+.no-more-photos {
+    width: 100%;
+    @include paragraph;
+    text-align: center;
+}

@@ -130,10 +130,13 @@ div.flex-row {
 
 .recommendation-section__photos {
     @include flex-row;
-    margin-bottom: 109px;
     align-items: center;
     justify-content: center;
     gap: 20px;
+}
+
+.recommendation-section--margin {
+    margin-bottom: 109px;
 }
 
 .recommendation-section__single-photo {
@@ -271,8 +274,12 @@ div.flex-row {
     }
     .recommendation-section__photos {
         justify-content: space-between;
+    }
+
+    .recommendation-section--margin {
         margin-bottom: 58px;
     }
+
     .recommendation-section__single-photo {
         width: 47%;
         height: auto;
@@ -306,8 +313,12 @@ div.flex-row {
     }
     .recommendation-section__photos{
         justify-content: center;
+    }
+
+    .recommendation-section--margin {
         margin-bottom: 24px;
     }
+
     .recommendation-section__single-photo {
         width: 100%;
         height: auto;

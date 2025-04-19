@@ -1,0 +1,38 @@
+//FILTER CONTAINER
+.flex-row-container {
+    @include flex-row;
+    padding: 80px 0 40px 0;
+}
+.col-1-filter-wrapper {
+    @include column-width;
+    display: flex;
+    justify-content: space-between;
+}
+.col-2-filter-wrapper {
+    @include column-width;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dropdown-toggle {
+   @include filter-input;
+}
+
+
+// MEDIA QUERIES
+//Desktop
+@media (max-width: 1302px) {
+    //Section 1
+    .main-section {
+       padding: 38px 0 0 0;
+   }
+   .flex-row-container {
+       justify-content: center;
+       margin-top: 40px;
+   }
+   .col-1-filter-wrapper {
+        width: 80%;
+   }
+  
+        
+}
