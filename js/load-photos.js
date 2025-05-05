@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
         $(document).ready(function() {
             let paged = 2;
-            let isNoMorePhotoShown = false; //Pour éviter d'afficher plusieurs fois le message "aucune photo trouvée" lors du clic sur le bouton charger plus
-            let isContentLoaded = false; //Pour appliquer la classe une seule fois
+            let isNoMorePhotoShown = false; // To avoid displaying the "aucune photo trouvée" message multiple times when clicking the button "charger plus" 
+            let isContentLoaded = false; //To apply the class only once after loading new content
 
+            // Load photos when the homepage loads
             $(".load-btn").on("click", function(e) {
                 e.preventDefault();
                 const ajaxUrl = $(this).data("url");
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 };
                 console.log("envoi de la requête ajax avec les données:", data);
 
-                // Envoi de la requête ajax pour charger plus de photos
+                // Send AJAX request to load more photos
                 $.post(ajaxUrl, data, function(response) {
                     console.log("Réponse reçue:",response); 
 
@@ -27,32 +28,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
                             if(!isNoMorePhotoShown) {
                                 $(".recommendation-section__photos").append('<p class="no-more-photos">Aucune photo trouvée</p>');
-                                isNoMorePhotoShown = true; //Marque que le message a été affiché
+                                isNoMorePhotoShown = true; //Flag to prevent showing the message again
                             }
 
-                            //On cache le bouton
-                            $(".load-btn").hide();
+                        //Hide "Charger plus" button
+                        $(".load-btn").hide();
                     } else if (response.data) {
                         console.log("Nouvelles photos reçues, ajout au DOM");
 
-                        //On ajoute les nouvelles photos
+                        //Append new photos to the section
                         $(".recommendation-section__photos").append(response.data);
 
-                        //On incrémente la page pour la prochaine requête
+                        // Increment the page number for the next AJAX request
                         paged++; 
                     }
 
-                    //Réduire la marge une seule fois après avoir ajouté du contenu
+                    //Reduce the margin once after adding content to match the design layout
                     if (!isContentLoaded) {
                             $(".recommendation-section__photos").addClass("photos-loaded");
                             isContentLoaded = true;
-                            }
-                    } else {
-                        console.error("Erreur dans la réponse AJAX");
                     }
-                }).fail(function(jqXHR, textStatus, errorThrown) {
+                } else {
+                    console.error("Erreur dans la réponse AJAX");
+                }
+            }).fail(function(jqXHR, textStatus, errorThrown) {
                     console.error("Erreur AJAX:", textStatus, errorThrown);
-                });
             });
-        });   
-    });
+        });
+    });   
+});

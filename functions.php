@@ -156,7 +156,10 @@ function motaphoto_scripts()
 
 	wp_enqueue_script('motaphoto-modal', get_template_directory_uri() . '/js/modal.js', array('jquery'), _S_VERSION, true);
 
-	wp_enqueue_script('motaphoto-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
+	wp_enqueue_script('motaphoto-select2', get_template_directory_uri() . '/js/select2.js', array('jquery'), _S_VERSION, true);
+
+	wp_enqueue_script('motaphoto-main', get_template_directory_uri() . '/js/main.js', array('jquery', 'motaphoto-select2'), _S_VERSION, true);
+
 	wp_enqueue_script('motaphoto-load-photos', get_template_directory_uri() . '/js/load-photos.js', array('jquery'), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'motaphoto_scripts');
@@ -205,65 +208,11 @@ require get_template_directory() . '/inc/contact-modal.php';
 
 
 /**
- * AJAX function to dynamically load photos in the gallery.
- *
- * This function is called via an AJAX request. It first checks the security by validating the nonce,
- * then ensures that the 'paged' parameter is provided for pagination of the results. 
- * It then performs a WP_Query to retrieve posts of the custom post type 'photos',
- * respecting the pagination parameters and sorting the results by descending date.
- * If photos are found, it generates HTML for the results. 
- * In case no results are found, an error message is returned.
- * Finally, the function returns the results as a JSON response.
+ * AJAX FUNCTION TO DYNAMICALLY LOAD PHOTOS IN THE GALLERY (home.php)
  */
-function load_photos()
-{
-	// echo "Message bien reçu";
-	// Vérification de sécurité
-	if (!isset($_REQUEST['nonce']) or !wp_verify_nonce($_REQUEST['nonce'], 'load_photos')) {
-		wp_send_json_error("Vous n’avez pas l’autorisation d’effectuer cette action.", 403);
-	}
+require get_template_directory() . '/inc/load-gallery-pics.php';
 
-	// On vérifie que le numéro de page a bien été envoyé
-	if (!isset($_POST['paged'])) {
-		wp_send_json_error("Le paramètre 'paged' est manquant.", 400);
-	}
-
-	$paged = intval($_POST['paged']);
-
-	// Requête pour récupérer les photos
-	$args = array(
-		'post_type' => 'photos',
-		'posts_per_page' => 8,
-		'paged' => $paged,
-		'order' => 'DESC',
-		'orderby' => 'date'
-	);
-
-	$query = new WP_Query($args);
-
-	// Construire le HTML des résultats
-	$resultats_html = '';
-	if ($query->have_posts()) {
-		while ($query->have_posts()) {
-			$query->the_post();
-			ob_start(); // commence à capturer ce qui est affiché
-			get_template_part('template-parts/onephoto');
-			$resultats_html .= ob_get_clean(); // récupère tout ce qui a été affiché et l'ajoute à ta variable
-			$resultats_html .= ob_get_clean();
-		}
-		wp_send_json_success($resultats_html);
-	} else {
-
-		wp_send_json_success(array('no_more_photos' => true)); //On envoie un flag pour signaler qu'il n'y a plus de photos
-	}
-	// Réinitialiser la requête WP_Query
-	wp_reset_postdata();
-
-	// Renvoyer les résultats au format JSON
-	wp_send_json_success($resultats_html);
-
-	wp_die();
-}
-
-add_action('wp_ajax_load_photos', 'load_photos');
-add_action('wp_ajax_nopriv_load_photos', 'load_photos'); //For users not connected
+/**
+ * DISPLAY FILTERED PHOTOS IN THE HOME GALLERY (home.php)
+ */
+require get_template_directory() . '/inc/load-filtered-pics.php';

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
+    // DISPLAY THE FEATURED THUMBNAIL OF THE PREVIOUS ANS NEXT POST IN single-photos.php
     let photoThumbnail = document.querySelectorAll(".photo-thumbnail");
     let previousPic =  document.querySelector(".previous");
     let nextPic =  document.querySelector(".next");
@@ -27,6 +28,50 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     }
 
-   
+    // FILTERING FEATURED IMAGES IN home.php FORM
+    $(document).ready(function () {
+      let paged = 1;
 
+      // Handle changes in the select fields
+      $(".form-select").change(function () {
+        $(".load-btn").hide();
+        let categorie = $("#category_id").val();
+        let format = $("#format_id").val();
+        let order = $("#date_id").val();
+
+        // Send an AJAX request to retrieve filtered photos with security
+        const nonce = $("#nonce").val();
+        const ajaxurl = $("#ajaxurl").val();
+
+        // Data to send via AJAX
+        let ajaxData = {
+          action: "filter_photos",
+          nonce: nonce,
+          category: categorie,
+          format: format,
+          order: order,
+          paged: paged,
+        };
+        console.log("envoi de la requête ajax avec les données:", ajaxData);
+
+        $.ajax({
+          url: ajaxurl,
+          type: "post",
+          datatype: "html",
+          data: ajaxData,
+          success: function (response) {
+            console.log("Réponse reçue:",response); 
+          
+            // Update the gallery content with the new results
+            if (response.success) {
+              $(".recommendation-section__photos").html(response.data);
+              paged = 1;
+            }
+          },
+          error: function (xhr, status, error) {
+            console.error("Erreur AJAX :", error);
+          },
+        });
+      });
+    });
 });

@@ -28,7 +28,7 @@
 	}
   }
 
-// TYPOGRAPHIE OF CONTACT FORM
+// TYPOGRAPHIE OF CONTACT FORM AND OF THE SELECT DROPDOWN MENU of home.php filter
 @mixin contact-form-label {
 	font-family: $font-family__contact-form;//Poppins medium
 	text-transform: uppercase;
@@ -86,13 +86,9 @@
 
 //Filter INPUT
 @mixin filter-input {
-	width: 260px;
-    height: auto;
-	display: flex;
-    justify-content: space-between;
-    border: 1.3px solid $color__input-border;
-    border-radius: 8px;
-    padding: 11px 18px 11px 18px;
+    border: 1.3px solid $color__input-border !important;
+    border-radius: 8px !important;
+    // padding: 11px 18px;
 	font-family: $font-family__contact-form;//Poppins medium
 	font-size: $font-size__small;//12px
 	color: $color__link-visited;

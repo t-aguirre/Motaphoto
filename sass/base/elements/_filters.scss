@@ -7,6 +7,8 @@
     @include column-width;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 8px;
 }
 .col-2-filter-wrapper {
     @include column-width;
@@ -14,9 +16,65 @@
     justify-content: flex-end;
 }
 
-.dropdown-toggle {
+//SELECT2 JS
+// Select2 styles in home.php filter selects
+.select-filter {
    @include filter-input;
 }
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 18px;
+    letter-spacing: 0.36px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: $color__link-visited;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: $color__link-visited transparent transparent transparent;
+}
+
+//select dropdown list
+.select-dropdown-list {
+    border: none;
+    font-family: $font-family__contact-form;//Poppins medium
+	font-size: $font-size__small;//12px
+    color: $color__link-visited;
+    letter-spacing: 0.36px;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: $color__accent; //rouge
+}
+
+.select2-results__option {
+    padding: 11px 24px;
+}
+
+//Input of the dropdown list
+.select2-search--dropdown {
+    border: 1.3px solid $color__filter-input;
+    border-radius: 8px 8px 0 0;
+}
+
+.select2-search--dropdown .select2-search__field {
+    padding: 0;
+}
+
+.select2-search--dropdown {
+    padding: 11px 18px;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: none;
+}
+
+input.select2-search__field:focus {
+    outline: none;
+}
+
+
 
 
 // MEDIA QUERIES
@@ -26,13 +84,14 @@
     .main-section {
        padding: 38px 0 0 0;
    }
+
    .flex-row-container {
        justify-content: center;
        margin-top: 40px;
    }
+
    .col-1-filter-wrapper {
         width: 80%;
    }
-  
-        
+         
 }
