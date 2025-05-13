@@ -3,7 +3,10 @@
     the_post_thumbnail('medium_large');
     ?>
     <div class="recommendation-section__single-photo-overlay">
-        <a href="#" class="fullscreen-icon" title="Agrandir">
+        <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?> "
+            data-reference="<?= get_field('reference') ?>"
+            data-categorie="<?= strip_tags(get_the_term_list(get_the_ID(), 'categorie')) ?>"
+            class="fullscreen-icon" title="Agrandir">
             <img src="<?php echo get_template_directory_uri(); ?>/icons/fullscreen-icon.png" alt="Icone Agrandissement qui mène vers la visionneuse">
         </a>
         <a href="<?php echo get_permalink(get_the_ID()); ?>" class="visibility-icon" title="Voir">

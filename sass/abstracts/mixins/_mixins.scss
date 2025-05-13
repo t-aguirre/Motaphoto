@@ -71,6 +71,14 @@
 	font-size: $font-size__text;//14px
 }
 
+//Lightbox
+@mixin lightbox-data {
+	font-family: $font-family__contact-form;//Poppins medium
+	font-size: $font-size__text;//14px
+	text-transform: uppercase;
+	color: $color__white;
+}
+
 //BOUTON
 @mixin button {
 	font-family: $font-family-regular;//Space mono
@@ -79,7 +87,6 @@
 
 	&:hover {
 		background-color: $color__black;
-		font-weight: bold;
 		color: $color__white;
 	}
 }
