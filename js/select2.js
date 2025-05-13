@@ -16,7 +16,7 @@
         // Initialising select2
         $(this).select2 ({
             placeholder: placeholder,
-            width: '260px',
+            width: '100%',
             allowClear: true, //causes a clear button ("x" icon) to appear on the select box when a value is selected
             selectionCssClass: 'select-filter',
             dropdownAutoWidth: true, //Automatically adjusts the width of the dropdown to match the width of the select element

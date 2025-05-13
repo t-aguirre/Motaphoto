@@ -758,6 +758,10 @@ h1.header-title {
   padding: 11px 24px;
 }
 
+.dropdown-wrapper {
+  width: 260px;
+}
+
 .select2-search--dropdown {
   border: 1.3px solid #215AFF;
   border-radius: 8px 8px 0 0;
@@ -781,14 +785,28 @@ input.select2-search__field:focus {
 
 @media (max-width: 1302px) {
   .main-section {
-    padding: 38px 0 0 0;
+    padding-top: 29px;
   }
   .flex-row-container {
     justify-content: center;
     margin-top: 40px;
   }
+  .flex-row-container {
+    margin-top: 0;
+    padding: 0 0 25px 0;
+  }
   .col-1-filter-wrapper {
     width: 80%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .col-2-filter-wrapper {
+    width: 100%;
+    justify-content: center;
+    margin: 8px 0 8px 0;
+  }
+  .dropdown-wrapper {
+    width: 270px;
   }
 }
 .photos-catalogue {
