@@ -35,13 +35,14 @@
 			<div class="site-header">
 				<div class="site-branding">
 					<?php
-					the_custom_logo();
-					if (!the_custom_logo()) :
+					if (has_custom_logo()) :
+						the_custom_logo();
+					else :
 					?>
-						<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-					<?php
-					endif;
-					?>
+						<p class="site-title">
+							<a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+						</p>
+					<?php endif; ?>
 				</div><!-- .site-branding -->
 
 				<nav id="site-navigation" class="main-navigation">
