@@ -35,13 +35,6 @@
 				width: 200px;
 			}
 
-			// :hover > a,
-			// .focus > a {
-			// }
-
-			// a:hover,
-			// a.focus {
-			// }
 		}
 
 		li:hover > ul,
@@ -52,22 +45,12 @@
 
 	li {
 		position: relative;
-
-		// &:hover > a,
-		// &.focus > a {
-		// }
 	}
 
 	a {
 		display: block;
 		text-decoration: none;
 	}
-
-	// .current_page_item > a,
-	// .current-menu-item > a,
-	// .current_page_ancestor > a,
-	// .current-menu-ancestor > a {
-	// }
 }
 
 /* Small menu. */

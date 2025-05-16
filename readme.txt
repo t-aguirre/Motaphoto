@@ -14,7 +14,7 @@ A starter theme called motaphoto.
 
 == Description ==
 
-motaphoto est un thème développé pour répondre aux besoins de la photographe française Nathalie Mota. Ce thème est basé sur le starter thème underscores
+Motaphoto is a theme developed to meet the needs of the French photographer Nathalie Mota. This theme is based on the Underscores starter theme.”
 
 == Installation ==
 

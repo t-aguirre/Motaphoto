@@ -40,6 +40,7 @@
 @mixin title-level-1 {
 	font-family: $font-family-italic-bold;//Space mono bold
 	font-size: $font-size__header-banner;//96px
+	text-transform: uppercase;
 }
 
 //H2

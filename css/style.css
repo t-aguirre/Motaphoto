@@ -674,6 +674,7 @@ footer#colophon .site-info ul a:hover {
 h1.header-title {
   font-family: "space_monobold_italic", "Courier New", Courier, monospace;
   font-size: 96px;
+  text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 3px #fff;
   text-align: center;
@@ -687,15 +688,20 @@ h1.header-title {
 @media (max-width: 940px) {
   .header-banner {
     height: 70vh;
-    padding-top: 72px;
   }
   h1.header-title {
-    font-size: 60px;
+    font-size: 42px;
   }
 }
 @media (max-width: 481px) {
   .header-banner {
     height: 253px;
+    margin-top: 72px;
+  }
+  .header-banner h1.header-title {
+    -webkit-text-stroke: 1.2px #fff;
+    padding: 0;
+    font-size: 30px;
   }
 }
 .flex-row-container {
@@ -818,9 +824,22 @@ input.select2-search__field:focus {
   margin-bottom: 53px;
 }
 
+@media (max-width: 1302px) {
+  .photos-catalogue {
+    padding: 0 146px 0 146px;
+  }
+}
+@media (max-width: 940px) {
+  .photos-catalogue {
+    padding: 0 89px 0 89px;
+  }
+}
 @media (max-width: 481px) {
   .catalogue-margin {
     margin-bottom: 77px;
+  }
+  .photos-catalogue {
+    padding: 0 29px 0 29px;
   }
   .photos-loaded {
     margin-bottom: 45px;
@@ -1125,7 +1144,6 @@ div.flex-row {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
   gap: 20px;
 }
 
@@ -1135,10 +1153,11 @@ div.flex-row {
 
 .recommendation-section__single-photo {
   aspect-ratio: 1.14;
-  height: auto;
   max-height: 495px;
   max-width: 564px;
   position: relative;
+  flex: 0 1 calc(50% - 10px);
+  overflow: hidden;
 }
 
 .recommendation-section__single-photo-overlay {
@@ -1196,6 +1215,11 @@ div.flex-row {
   color: #fff;
 }
 
+@media (max-width: 1439px) {
+  .recommendation-section__single-photo {
+    max-width: 49%;
+  }
+}
 @media (max-width: 1302px) {
   .main-section {
     padding: 38px 0 0 0;
@@ -1254,19 +1278,18 @@ div.flex-row {
   }
 }
 @media (max-width: 940px) {
+  .photo-img {
+    margin-top: 18px;
+  }
   .recommendation-section {
     width: 80%;
     padding: 0;
   }
   .recommendation-section__photos {
-    justify-content: space-between;
+    justify-content: center;
   }
   .recommendation-section--margin {
     margin-bottom: 58px;
-  }
-  .recommendation-section__single-photo {
-    width: 47%;
-    height: auto;
   }
   .recommendation-title {
     margin-top: 53px;
@@ -1300,6 +1323,7 @@ div.flex-row {
     width: 100%;
     height: auto;
     max-width: 317.66px;
+    flex: 0 1 317.66px;
   }
 }
 @media (max-width: 375px) {
@@ -1312,9 +1336,6 @@ div.flex-row {
   }
   .contact-cta {
     max-width: 265px;
-  }
-  .recommendation-section__single-photo {
-    max-width: 317.66px;
   }
 }
 .main-section-margin {
@@ -1340,6 +1361,38 @@ div.flex-row {
   font-family: "poppins-light", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 14px;
   text-align: center;
+}
+
+.error-404 {
+  width: 100%;
+  height: 84vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "poppins-medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.error-title, .emoji-wink {
+  font-size: 42px;
+  padding: 0 20px 0 20px;
+  text-align: center;
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(216, 216, 216, 0.3);
+  margin: 0 40px 0 40px;
+  border-radius: 5px;
+}
+
+.error-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 40px 40px 0 40px;
 }
 
 /*--------------------------------------------------------------

@@ -8,10 +8,28 @@
 }
 
 //MEDIA QUERIES
+// desktop 
+@media (max-width: 1302px) {
+    .photos-catalogue {
+        padding: 0 146px 0 146px;
+    }
+}
+
+// Tablets
+@media (max-width: 940px) {
+    .photos-catalogue {
+        padding: 0 89px 0 89px;
+    }
+}
+
 //Mobiles
 @media (max-width: 481px) {
     .catalogue-margin {
         margin-bottom: 77px;
+    }
+
+    .photos-catalogue {
+        padding: 0 29px 0 29px;
     }
     
     .photos-loaded {

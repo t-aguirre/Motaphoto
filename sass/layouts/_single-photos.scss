@@ -2,9 +2,6 @@
 .main-section, .recommendation-section {
     padding: 38px 146px 0 146px;
     @include sections;
-    // margin: auto;
-    // width: 100%;
-    // max-width: 1440px;
 }
 
 //section 1 - left column
@@ -72,7 +69,6 @@ div.flex-row {
     @include button;
     width: 272px;
     height: 50px;
-
  }
 
  //section 2 - right column
@@ -131,7 +127,6 @@ div.flex-row {
 .recommendation-section__photos {
     @include flex-row;
     align-items: center;
-    justify-content: center;
     gap: 20px;
 }
 
@@ -141,10 +136,12 @@ div.flex-row {
 
 .recommendation-section__single-photo {
     aspect-ratio: 1.14;
-    height: auto;
+    // height: auto;
     max-height: 495px;
     max-width: 564px;
     position: relative;
+    flex: 0 1 calc(50% - 10px);
+    overflow: hidden;
 }
 
 .recommendation-section__single-photo-overlay {
@@ -201,6 +198,13 @@ div.flex-row {
 
 // MEDIA QUERIES
 //Desktop
+//Onephoto template in home gallery
+@media (max-width: 1439px) {
+    .recommendation-section__single-photo {
+        max-width: 49%;
+    }
+}
+
 @media (max-width: 1302px) {
      //Section 1
      .main-section {
@@ -266,23 +270,25 @@ div.flex-row {
 
 //Tablets
 @media (max-width: 940px) {
+    // //SECTION 1
+    .photo-img {
+        margin-top: 18px;
+    }
+
     //SECTION 2
     .recommendation-section {
         width: 80%;
         padding: 0;
     }
-    .recommendation-section__photos {
-        justify-content: space-between;
+
+    .recommendation-section__photos{
+        justify-content: center;
     }
 
     .recommendation-section--margin {
         margin-bottom: 58px;
     }
 
-    .recommendation-section__single-photo {
-        width: 47%;
-        height: auto;
-    }
     .recommendation-title {
         margin-top: 53px;
     }
@@ -322,6 +328,7 @@ div.flex-row {
         width: 100%;
         height: auto;
         max-width: 317.66px;
+        flex: 0 1 317.66px;
     } 
 }
 
@@ -340,9 +347,4 @@ div.flex-row {
     .contact-cta {
         max-width: 265px;
     }
-
-    //SECTION 2
-    .recommendation-section__single-photo {
-        max-width: 317.66px;
-    } 
 }

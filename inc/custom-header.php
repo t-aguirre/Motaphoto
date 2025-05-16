@@ -4,8 +4,7 @@
  * Sample implementation of the Custom Header feature
  *
  * You can add an optional custom header image to header.php like so ...
- *
-	<?php the_header_image_tag(); ?>
+ *<?php the_header_image_tag(); ?>
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
@@ -45,9 +44,9 @@ if (! function_exists('motaphoto_header_style')) :
 	{
 		$header_text_color = get_header_textcolor();
 
-		// Si aucune couleur n'est définie (par défaut la couleur est '000000')
+		// If no color is defined (the default color is '000000')
 		if ($header_text_color == '000000' || $header_text_color == '') {
-			$header_text_color = '000000'; // Applique le noir par défaut
+			$header_text_color = '000000'; // Apply black as the default color
 		}
 
 		/*

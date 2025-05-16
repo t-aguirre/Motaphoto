@@ -28,7 +28,6 @@ h1.header-title {
 @media (max-width: 940px) {
     .header-banner {
         height: 70vh;
-        padding-top: 72px;
     }
     h1.header-title {
         font-size: $font-size__title-level-1-mobile;
@@ -39,5 +38,11 @@ h1.header-title {
 @media (max-width: 481px) {
     .header-banner {
         height: 253px;
+        margin-top: 72px;
+        h1.header-title {
+            -webkit-text-stroke: 1.2px $color__white;
+            padding: 0;
+            font-size: 30px;
+        }
     }
 }
