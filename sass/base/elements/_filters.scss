@@ -1,14 +1,16 @@
 //FILTER CONTAINER
 .flex-row-container {
     @include flex-row;
+    flex-wrap: nowrap;
     padding: 80px 0 40px 0;
+    column-gap: 20px;
 }
 .col-1-filter-wrapper {
     @include column-width;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     row-gap: 8px;
+    column-gap: 20px;
 }
 .col-2-filter-wrapper {
     @include column-width;
@@ -45,7 +47,7 @@
 }
 
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-    background-color: $color__accent; //rouge
+    background-color: $color__accent; //red
 }
 
 .select2-results__option {
@@ -54,7 +56,8 @@
 
 //Input of the dropdown list
 .dropdown-wrapper {
-    width: 260px;
+    flex: 1 1 260px;
+    max-width: 260px;
 }
 
 .select2-search--dropdown {
@@ -89,32 +92,64 @@ input.select2-search__field:focus {
         padding-top: 29px;
    }
 
-   .flex-row-container {
-       justify-content: center;
-       margin-top: 40px;
-   }
-
-
    // Home filter
    .flex-row-container {
     margin-top: 0;
-    padding: 0 0 25px 0;
+    padding: 0 146px 25px 146px;
     }
 
-   .col-1-filter-wrapper {
-        width: 80%;
-        flex-direction: column;
-        align-items: center;
-   }
-
-   .col-2-filter-wrapper {
-    width: 100%;
-    justify-content: center;
+   .col-1-filter-wrapper, .col-2-filter-wrapper {
     margin: 8px 0 8px 0;
     }
-
-    .dropdown-wrapper {
-        width: 270px;
-    }
          
+}
+
+@media (max-width: 1024px) {
+    .col-2-filter-wrapper .dropdown-wrapper {
+        max-width: 75%;
+    }
+}
+
+//Tablets
+@media (max-width: 940px) {
+    .flex-row-container {
+        padding: 0 89px 25px 89px;
+    }
+}
+
+@media (max-width: 768px) {
+        .col-2-filter-wrapper .dropdown-wrapper {
+        max-width: none;
+    }
+}
+
+@media (max-width: 570px) {
+        .flex-row-container {
+            flex-direction: column;
+            width: 100%;  
+        }
+
+        .col-1-filter-wrapper, .col-2-filter-wrapper {
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0px 0 8px 0;
+        }
+
+        .dropdown-wrapper {
+          max-width: 270px;
+        }
+}
+
+@media (max-width: 425px) {
+        .col-2-filter-wrapper .dropdown-wrapper {
+            max-width: 270px;
+        }
+}
+
+// Mobiles
+@media (max-width: 375px) {
+    .flex-row-container {
+        padding: 0 49px 25px 49px;
+    }
 }

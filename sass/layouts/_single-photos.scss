@@ -126,8 +126,10 @@ div.flex-row {
 
 .recommendation-section__photos {
     @include flex-row;
+    justify-content: center;
     align-items: center;
     gap: 20px;
+    flex: 1 1 calc(50% - 20px);
 }
 
 .recommendation-section--margin {
@@ -136,7 +138,6 @@ div.flex-row {
 
 .recommendation-section__single-photo {
     aspect-ratio: 1.14;
-    // height: auto;
     max-height: 495px;
     max-width: 564px;
     position: relative;
@@ -267,6 +268,7 @@ div.flex-row {
         width: 100%;
     }
 }
+
 
 //Tablets
 @media (max-width: 940px) {

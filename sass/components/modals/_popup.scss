@@ -117,6 +117,9 @@
     width: 100%;
 }
 
+
+// MEDIA QUERIES
+// Tablets
 @media screen and (max-width: 768px) {
     .modal .modal-content {
             max-width: 286px;
@@ -160,5 +163,19 @@
 
     .wpcf7 p:last-of-type {
         margin: 19px 0 0 0;
+    }
+}
+
+//Mobiles
+@media screen and (max-width: 420px) {
+    .modal .modal-content {
+        max-width: 320px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .modal .modal-content {
+        max-width: 286px;
+        max-height: 100vh;
     }
 }
