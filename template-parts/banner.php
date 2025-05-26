@@ -10,7 +10,7 @@
 
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post();
-            $image_url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), array(1440, 962));
+            $image_url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
 
             if ($image_url) :
     ?>
