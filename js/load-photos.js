@@ -39,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function() {
                         //Append new photos to the section
                         $(".recommendation-section__photos").append(response.data);
 
+                        // After appending new photos to the DOM, re-run Lightbox.init() so that the new .fullscreen-icon elements get the correct event listeners
+                        Lightbox.init();
+
                         // Increment the page number for the next AJAX request
                         paged++; 
                     }

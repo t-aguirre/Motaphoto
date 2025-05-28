@@ -6,20 +6,30 @@
 class Lightbox {
     // Initialize the lightbox functionality
     static init () {
-        // Select all links that point to an image file
+        // Select all elements with the class .fullscreen-icon that haven't been bound yet
+        const links = Array.from(document.querySelectorAll('.fullscreen-icon:not(.lightbox-bound)'));
+        // Create an array of image URLs for the gallery
+        const gallery = links.map(link => link.getAttribute('href'));
 
-        const links = Array.from(document.querySelectorAll('.fullscreen-icon'))
-        const gallery = links.map(link => link.getAttribute('href'))
-        console.log(gallery);
+        links.forEach(link => {
+        // Mark this element as processed to avoid binding the event multiple times
+        link.classList.add('lightbox-bound');
 
-        links.forEach(link => link.addEventListener('click', e => {
-            e.preventDefault()
+        // Attach a click event listener to open the lightbox
+        link.addEventListener('click', e => {
+            e.preventDefault();
+
+            // Get image data from the link's data attributes
             const url = e.currentTarget.getAttribute('href');
             const reference = e.currentTarget.dataset.reference;
             const categorie = e.currentTarget.dataset.categorie;
+
+            // Create and display the lightbox
             new Lightbox(url, reference, categorie, gallery);
-        }))
-    }
+        });
+    });
+}
+
 
 /**
  * @param {string} url Image url
