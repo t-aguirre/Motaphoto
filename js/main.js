@@ -65,6 +65,14 @@ document.addEventListener("DOMContentLoaded", function(){
             // Update the gallery content with the new results
             if (response.success) {
               $(".recommendation-section__photos").html(response.data);
+
+              /**
+              * Initializes the Lightbox by selecting all unbound image links with the class `.fullscreen-icon`,
+              * binding click events to them, and preparing the gallery of image URLs.
+              * Ensures each link is only initialized once by adding a 'lightbox-bound' marker class.
+              */
+              Lightbox.init();
+
               paged = 1;
             }
           },
